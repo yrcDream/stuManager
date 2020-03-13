@@ -20,8 +20,8 @@ public class StuServiceImp implements StuService {
 	@Autowired
 	private StudentMapper studentMapper;
 	@Override
-	public List<CstStudent> findStuByQueryInfo(QueryInfoVal queryInfo) throws Exception {
-		List<CstStudent> stuLists = studentMapper.selectByQueryInfoAndLimit(queryInfo);
+	public List<Student> findStuByQueryInfo(QueryInfoVal queryInfo) throws Exception {
+		List<Student> stuLists = studentMapper.selectByQueryInfoAndLimit(queryInfo);
 		return stuLists;
 	}
 	 

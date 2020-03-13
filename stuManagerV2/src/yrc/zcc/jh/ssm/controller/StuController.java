@@ -10,8 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import yrc.zcc.jh.ssm.customer.CstScore;
 import yrc.zcc.jh.ssm.customer.CstStudent;
-import yrc.zcc.jh.ssm.pojo.Score;
 import yrc.zcc.jh.ssm.pojo.Student;
 import yrc.zcc.jh.ssm.queryInfo.QueryInfoVal;
 import yrc.zcc.jh.ssm.service.ScoService;
@@ -45,11 +45,11 @@ public class StuController {
 		queryInfoVal.setCstStudent(cstStudent);
 		queryInfoVal.setPsize(pagebean.getPsize());
 		pagebean.setTrcored(stuService.getItemsCountByQueryInfo(queryInfoVal));
-		List<CstStudent> beanList = stuService.findStuByQueryInfo(queryInfoVal);
-		for(CstStudent stu: beanList) {
-			List<Score> scores =  scoService.findScoreByXh(stu.getXh());
-			stu.setStuScores(scores);
-		}
+		List<Student> list = stuService.findStuByQueryInfo(queryInfoVal);
+		List<CstStudent> beanList = new ArrayList<CstStudent>(list.size());
+		/**
+		 * 此处的逻辑还未完成
+		 */
 		pagebean.setBeanList(beanList);
 		mv.addObject("pb", pagebean);
 		mv.setViewName("show");

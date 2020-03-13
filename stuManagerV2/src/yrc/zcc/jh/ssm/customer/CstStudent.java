@@ -5,7 +5,7 @@ import java.util.List;
 import yrc.zcc.jh.ssm.pojo.Score;
 import yrc.zcc.jh.ssm.pojo.Student;
 
-public class CstStudent extends Student {
+public class CstStudent extends Student{
 	private Student student;
 	private List<Score> stuScores;
 	private int pc;

@@ -13,14 +13,14 @@
     <result column="email" jdbcType="VARCHAR" property="email" />
     <result column="major" jdbcType="VARCHAR" property="major" />
   </resultMap>
-  <resultMap id="BaseResultMap2" type="yrc.zcc.jh.ssm.customer.CstStudent">
- 	<!-- 使用自定义封装类进行映射 -->>
+ <!--  <resultMap id="BaseResultMap2" type="yrc.zcc.jh.ssm.customer.CstStudent">
+ 	使用自定义封装类进行映射>
     <id column="xh" jdbcType="CHAR" property="xh" />
     <result column="xm" jdbcType="VARCHAR" property="xm" />
     <result column="xb" jdbcType="VARCHAR" property="xb" />
     <result column="email" jdbcType="VARCHAR" property="email" />
     <result column="major" jdbcType="VARCHAR" property="major" />
-  </resultMap>
+  </resultMap> -->
   <sql id="Example_Where_Clause">
     <!--
       WARNING - @mbg.generated
@@ -116,7 +116,7 @@
     xh, xm, xb, email, major
   </sql>
   <!-- 自定义mapper.xml查询片段 -->
-  <select id="selectByQueryInfoAndLimit" parameterType="yrc.zcc.jh.ssm.queryInfo.QueryInfoVal" resultMap="BaseResultMap2">
+  <select id="selectByQueryInfoAndLimit" parameterType="yrc.zcc.jh.ssm.queryInfo.QueryInfoVal" resultMap="BaseResultMap">
   	select distinct
   	<include refid="Base_Column_List" />
   	from student
